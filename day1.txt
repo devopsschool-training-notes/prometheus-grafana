@@ -87,7 +87,7 @@ Step 6 - Validate a windows metrices
 =====================================================================
 How to Integrate Docker Metrices into Promethus?
 
-Step 1 - Install Docker
+Step 1 - How to install Install Docker
 https://devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
 
 Step 2 - Configure docker for exposing a Metrices at end point
@@ -122,6 +122,67 @@ Assignment
 Can we convert Promethus as a service?
 --------------------------------
 https://www.devopsschool.com/blog/how-to-run-prometheus-server-as-a-service/
+
+======================================================
+How to setup Apache exporters for apache Metrices into Promethus?
+
+Step 1 - Install a Apache
+$  yum install httpd -y 
+
+Step 2 - Enable mod_status in apache using manually or apache exporter
+Method 1- ---
+
+https://www.devopsschool.com/blog/how-to-install-mod_status-on-your-apache-servers-and-enable-extendedstatus/
+
+DocumentRoot "/var/www/html"
+LoadModule status_module modules/mod_status.so
+<Location /server-status>
+   SetHandler server-status
+   Order deny,allow
+   Deny from all
+   Allow from all
+   Allow from 172.31.21.36
+</Location>
+ExtendedStatus On
+http://3.110.33.54/server-status
+
+Method 2- --- Using Apache exporter
+- https://github.com/Lusitaniae/apache_exporter
+- Download from https://github.com/Lusitaniae/apache_exporter/releases/tag/v0.10.1
+
+
+Step 3 - Start a Apache
+
+
+
+Step 4 - validate Apache metrics at endpoint
+Check metrics  http://3.110.33.54:9117/metrics
+
+  - job_name: apache
+    static_configs:
+      - targets: ['3.110.33.54:9117']
+
+
+
+
+Step 5 - Restart or Reload a Promethus 
+
+Step 6 - Validate a Target was added in Promethus or not
+
+Step 7 - Validate a windows metrices
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
