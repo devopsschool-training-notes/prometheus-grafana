@@ -48,8 +48,39 @@ Take this data and push at http:				http  < ---------
 
 
 
+How to Install Windows Exporter for prom?
+-----------------------------------------
+Public DNS	ec2-3-109-158-193.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+Hgs9YvSKk(H2y.I.exfPZmkPYkQpXgJV
 
 
+Step 1 - Download and Install Windows Exporter
+- https://prometheus.io/docs/instrumenting/exporters/
+- https://github.com/prometheus-community/windows_exporter
+- https://github.com/prometheus-community/windows_exporter/releases
+
+Step 2 - Start a windows Windows Exporter
+
+# Run in Background
+# Disable a Firewall
+# The port to bind to. Defaults to 9182.
+# validate - http://ip-address:9182/metrics
+
+
+Step 3 - Configure Promethus promethus.yml for scrap target
+  - job_name: windows
+    static_configs:
+      - targets: ['3.109.158.193:9182']
+
+
+
+Step 4 - Restart or Reload a Promethus 
+
+Step 5 - Validate a Target was added in Promethus or not
+
+Step 6 - Validate a windows metrices
 
 
 
