@@ -1,0 +1,63 @@
+Demo#1 - Install and Configure Promethus Server
+LAB#1 - Install and Configure Promethus Server
+
+Demo#2 - Install and Configure Node Exporter
+LAB#2 -  Install and Configure Node Exporter
+
+ASSIGNMENT#1
+
+--------------------------------------
+Demo#3 - Install and Configure Windows Exporter
+LAB#3 - Install and Configure Windows Exporter
+
+Demo#4 - Install and Configure Apache Exporter
+LAB#4 -  Install and Configure Apache Exporter
+
+Demo#5 - Install and Configure MSSQL server exporter
+LAB#5 -  Install and Configure MSSQL server exporter
+
+Demo#6 - Install and Configure Docker exporter
+LAB#6 -  Install and Configure Docker exporter
+
+ASSIGNMENT#2
+
+
+-TOMO-----------
+Blackbox exporter (official)
+
+Demo#6 - Install and Configure Kubernetes exporter
+LAB#6 -  Install and Configure Kubernetes exporter
+=========================================================
+3.110.33.54
+https://www.devopsschool.com/blog/install-and-configure-prometheus-server-and-node-exporter-in-rhel/
+
+
+
+
+SOURCE -->			COMPILE   ----------------> RUN
+----------------------------
+ADD SPECIAL CODE
+----------
+Take this data and push at http:				http  < ---------
+
+
+
+- job_name: linux
+  static_configs:
+  - targets: ['localhost:9100']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
